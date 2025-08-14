@@ -1,73 +1,56 @@
-# Welcome to your Lovable project
+# Udyam Digital Form – Steps 1 & 2
 
-## Project info
+This project replicates the first two steps of the official [Udyam Registration](https://udyamregistration.gov.in/UdyamRegistration.aspx) form, including Aadhaar + OTP verification and PAN validation.  
+It is built with **React (TypeScript)** and **Tailwind CSS** for a fully responsive UI, with backend integration using **Node.js, Express, and Prisma**.
 
-**URL**: https://lovable.dev/projects/4803ccdb-6fab-4505-bab6-e5519c2c6e07
+---
 
-## How can I edit this code?
+##  Features
+- **Step 1: Aadhaar + OTP Validation** – Real-time field validation.
+- **Step 2: PAN Validation** – Regex-based checks.
+- **Responsive UI** – Mobile-first design using Tailwind CSS.
+- **Dynamic Form Rendering** – Based on JSON schema scraped from the official Udyam portal.
+- **Backend API** – For form validation and PostgreSQL storage.
+- **Unit Tests** – Ensuring form logic and API endpoints work correctly.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/4803ccdb-6fab-4505-bab6-e5519c2c6e07) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
+##  Tech Stack
+### Frontend
+- React + TypeScript
 - Tailwind CSS
+- Vite
 
-## How can I deploy this project?
+### Backend
+- Node.js + Express
+- Prisma ORM
+- PostgreSQL
 
-Simply open [Lovable](https://lovable.dev/projects/4803ccdb-6fab-4505-bab6-e5519c2c6e07) and click on Share -> Publish.
+### Web Scraping
+- Puppeteer (JavaScript) – extracts field names, labels, validation patterns.
 
-## Can I connect a custom domain to my Lovable project?
+### Testing
+- Jest + Supertest
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+##  Project Structure
+udyam-digital-form-main/
+├─ src/ # React frontend
+├─ public/ # Static assets
+├─ backend/ # API + DB
+│ ├─ prisma/ # Prisma schema
+│ ├─ src/ # Express server code
+├─ scripts/ # Web scraping scripts
+├─ package.json # Frontend dependencies
+└─ README.md 
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+---
+
+##  Getting Started
+
+### 1 Clone the Repository
+```bash
+git clone <repo-url>
+cd udyam-digital-form-main
