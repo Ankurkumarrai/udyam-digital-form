@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ProgressBar } from "@/components/ui/progress-bar";
 import { AadhaarStep } from "@/components/forms/AadhaarStep";
 import { PanStep } from "@/components/forms/PanStep";
+import { ConfirmationStep } from "@/components/forms/ConfirmationStep";
 import { SuccessStep } from "@/components/forms/SuccessStep";
 import { WebScrapingDemo } from "@/components/demo/WebScrapingDemo";
 import { Badge } from "@/components/ui/badge";
@@ -23,7 +24,7 @@ const Index = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<FormData>({});
 
-  const steps = ["Aadhaar Verification", "PAN & Business Details", "Confirmation"];
+  const steps = ["Aadhaar Verification", "PAN & Business Details", "Review & Confirm", "Completion"];
   
   const handleNext = (data: any) => {
     setFormData(prev => ({ ...prev, ...data }));
@@ -32,6 +33,10 @@ const Index = () => {
 
   const handleBack = () => {
     setCurrentStep(prev => prev - 1);
+  };
+
+  const handleEdit = (step: number) => {
+    setCurrentStep(step);
   };
 
   const handleReset = () => {
@@ -102,6 +107,15 @@ const Index = () => {
             )}
             
             {currentStep === 2 && (
+              <ConfirmationStep 
+                onNext={handleNext}
+                onBack={handleBack}
+                onEdit={handleEdit}
+                formData={formData}
+              />
+            )}
+            
+            {currentStep === 3 && (
               <SuccessStep 
                 formData={formData}
                 onReset={handleReset}
