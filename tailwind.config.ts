@@ -18,6 +18,19 @@ export default {
 			}
 		},
 		extend: {
+			backgroundImage: {
+				'gradient-header': 'var(--gradient-header)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-success': 'var(--gradient-success)',
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'form': 'var(--shadow-form)',
+				'button': 'var(--shadow-button)',
+			},
+			transitionProperty: {
+				'smooth': 'var(--transition-smooth)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -26,11 +39,17 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					muted: 'hsl(var(--primary-muted))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))',
+					muted: 'hsl(var(--success-muted))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
