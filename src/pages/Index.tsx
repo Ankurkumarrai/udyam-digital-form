@@ -3,6 +3,7 @@ import { ProgressBar } from "@/components/ui/progress-bar";
 import { AadhaarStep } from "@/components/forms/AadhaarStep";
 import { PanStep } from "@/components/forms/PanStep";
 import { SuccessStep } from "@/components/forms/SuccessStep";
+import { WebScrapingDemo } from "@/components/demo/WebScrapingDemo";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Shield, FileText } from "lucide-react";
 
@@ -80,6 +81,9 @@ const Index = () => {
               steps={steps}
             />
           </div>
+
+          {/* Web Scraping Demo Section */}
+          <WebScrapingDemo />
 
           <div className="flex justify-center">
             {currentStep === 0 && (

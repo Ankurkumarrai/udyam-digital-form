@@ -56,14 +56,19 @@ export const PanStep = ({ onNext, onBack, data }: PanStepProps) => {
 
     setIsValidating(true);
     
-    // Simulate PAN validation
+    // Simulate PAN validation with realistic delay and proper validation
     setTimeout(() => {
       setIsValidating(false);
-      setIsPanValid(true);
-      toast({
-        title: "PAN Validated Successfully",
-        description: "PAN number is valid and active",
-      });
+      // Check if PAN follows the correct pattern and simulate real validation
+      if (validatePan(panNumber)) {
+        setIsPanValid(true);
+        toast({
+          title: "PAN Validated Successfully",
+          description: `PAN ${panNumber} is valid and active`,
+        });
+      } else {
+        setErrors({ pan: "Invalid PAN format. Please enter a valid PAN number." });
+      }
     }, 2000);
   };
 
